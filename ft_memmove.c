@@ -1,19 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isdigit.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 16:48:16 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/01 16:53:19 by mbjaghou         ###   ########.fr       */
+/*   Created: 2021/11/05 12:24:47 by mbjaghou          #+#    #+#             */
+/*   Updated: 2021/11/06 10:48:46 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include <stdio.h>
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c >= 48 || c <= 57)
-		return (1);
+	size_t			i;
+	unsigned char	*l;
+	unsigned char	*r;
+
+	r = (unsigned char *)src;
+	l = (unsigned char *)dst;
+	if (l > r)
+	{
+		while (i < len)
+		{
+			l[len - 1] = r[len - 1];
+			len--;
+		}
+	}
 	else
-		return (0);
+	{
+		while (i < len)
+		{
+			l[i] = r[i];
+			i++;
+		}
+	}
+	return (dst);
 }

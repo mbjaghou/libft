@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 14:28:42 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/02 16:43:13 by mbjaghou         ###   ########.fr       */
+/*   Created: 2021/11/05 12:24:15 by mbjaghou          #+#    #+#             */
+/*   Updated: 2021/11/06 10:47:33 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
+int	ft_isdigit(int c)
 {
-	unsigned char	lol1;
-	unsigned char	lol2;
-
-	lol1 = (unsigned char *)src;
-	lol2 = (unsigned char *)dst;
-	while (n > 0)
-	{
-		lol2++ = lol1++;
-		n--;
-	}
-	return (dst);
-}	
+	if (c >= 48 || c <= 57)
+		return (1);
+	else
+		return (0);
+}

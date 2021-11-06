@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 17:19:43 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/02 14:19:38 by mbjaghou         ###   ########.fr       */
+/*   Created: 2021/11/05 12:20:47 by mbjaghou          #+#    #+#             */
+/*   Updated: 2021/11/05 12:21:13 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_isalnum(int c)
 {
-	size_t			i;
-	unsigned char	*f;
-
-	i = 0;
-	f = (unsigned char *)b;
-	while (i < len)
-	{
-		f[i] = c;
-		i++;
-	}
-	b = (void *)f;
-	return (b);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
+		return (1);
+	else
+		return (0);
 }
