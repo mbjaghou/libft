@@ -6,7 +6,7 @@
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:24:32 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/06 10:47:57 by mbjaghou         ###   ########.fr       */
+/*   Updated: 2021/11/07 14:19:56 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*p1 != *p2)
 			return (*p1 - *p2);
-		s1++;
-		s2++;
+		p1++;
+		p2++;
 		n--;
 	}
 	return (0);
