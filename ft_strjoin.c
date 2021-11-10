@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:23:08 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/06 10:58:33 by mbjaghou         ###   ########.fr       */
+/*   Created: 2021/11/09 13:56:17 by mbjaghou          #+#    #+#             */
+/*   Updated: 2021/11/09 14:11:38 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*result;
+	size_t	l1;
+	size_t	l2;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	if (!s1 || !s2)
+		return (0);
+	l1 = ft_strlen(s1);
+	l2 = ft_strlen(s2);
+	result = (char *)malloc(l1 + l2 + 1);
+	if (result != NULL)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i--;
+		ft_memcpy(result, s1, l1);
+		ft_memcpy(result + l1, s2, l2 + 1);
 	}
-	return (0);
-}
+	return (result);
+}	
