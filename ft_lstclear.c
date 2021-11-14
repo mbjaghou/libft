@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:25:50 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/06 10:59:42 by mbjaghou         ###   ########.fr       */
+/*   Created: 2021/11/12 17:52:36 by mbjaghou          #+#    #+#             */
+/*   Updated: 2021/11/13 02:26:05 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if ((c >= 'A') && (c <= 'Z'))
+	t_list	*tmp;
+
+	while (*lst)
 	{
-		c = c + 32;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	return (c);
+	*lst = NULL;
 }

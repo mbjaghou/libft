@@ -6,11 +6,11 @@
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:22:30 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/06 10:48:58 by mbjaghou         ###   ########.fr       */
+/*   Updated: 2021/11/12 19:13:04 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -24,6 +24,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		f[i] = c;
 		i++;
 	}
-	b = (void *)f;
 	return (b);
 }

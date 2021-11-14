@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:25:50 by mbjaghou          #+#    #+#             */
-/*   Updated: 2021/11/06 10:59:42 by mbjaghou         ###   ########.fr       */
+/*   Created: 2021/11/12 15:35:00 by mbjaghou          #+#    #+#             */
+/*   Updated: 2021/11/13 02:25:43 by mbjaghou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if ((c >= 'A') && (c <= 'Z'))
-	{
-		c = c + 32;
-	}
-	return (c);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

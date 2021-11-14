@@ -64,9 +64,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(newstr, s1 + bigin, lost - bigin + 1);
 	return (newstr);
 }
-/*int main()
-{
-    char str[] = "aaaabbbba";
-    char b[] = "a";
-    printf("%s\n", ft_strtrim(str, b));
-}*/
