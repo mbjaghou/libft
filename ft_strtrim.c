@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_star(const char *s1, const char *set)
+static	int	ft_star(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
@@ -28,7 +28,7 @@ int	ft_star(const char *s1, const char *set)
 	return (i);
 }
 
-int	ft_last(const char *s1, const char *set)
+static	int	ft_last(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;

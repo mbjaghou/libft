@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbjaghou <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mbjaghou <mbjaghou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/07 10:35:35 by mbjaghou          #+#    #+#              #
-#    Updated: 2021/11/12 18:13:23 by mbjaghou         ###   ########.fr        #
+#    Updated: 2021/11/20 22:43:43 by mbjaghou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,17 +46,14 @@ SRC =	ft_strnstr.c\
 		ft_itoa.c\
 		ft_strtrim.c\
 		ft_strmapi.c \
-		ft_striteri.c\
+		ft_striteri.c
 
 
-SRCBONUS = 	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-			ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-			ft_lstnew.c ft_lstsize.c
+CC = cc
 
+FLAGS = -Wall -Wextra -Werror
 
 OBJECTS = $(SRC:.c=.o)
-
-OBJE = $(SRCBONUS:.c=.o)
 
 
 all: $(NAME)
@@ -64,14 +61,13 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 
+%.o: %.c
+	$(CC) $(FLAGS) -c -o $@ $^
 
 clean:
 	rm -rf $(OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
-
-bonus: $(OBJECTS) $(OBJE)
-	ar rc $(NAME) $(OBJECTS) $(OBJE)
 
 re: fclean all

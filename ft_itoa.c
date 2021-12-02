@@ -12,27 +12,21 @@
 
 #include "libft.h"
 
-int	ft_bob(int n)
+static	int	ft_bob(int n)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	if (n <= 0)
 	{
 		n = -n;
-		j = n;
 		i = 1;
 	}
 	else
-	{
-		j = n;
 		i = 0;
-	}
-	while (j > 0)
+	while (n > 0)
 	{
-		j /= 10;
+		n /= 10;
 		i++;
 	}
 	return (i);
@@ -41,12 +35,10 @@ int	ft_bob(int n)
 char	*ft_itoa(int n)
 {
 	int		i;
-	int		j;
 	char	s;
 	char	*str;
 
 	i = 0;
-	j = 0;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	i = ft_bob(n);
